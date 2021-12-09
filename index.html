@@ -20,17 +20,20 @@
                 <th class="short">Üzenet</th>
                 <th>Időpont</th>
                 <th>Napok</th>
-                <th class="short">&#10004</th>
+                <th class="short">Összerak</th>
+                <th class="short">Elküld</th>
             </tr>
             
-            <form onsubmit="redirector()" method="post">
-              <tr>
-                <td><input id='msg' type="text" name='msg' placeholder='Mit üzensz?'></td>
-                <td><input id='time' type='time' name='end' placeholder=12:34></td>
-                <td><input id='days' type="number" name="days" min="0" max="9999999" placeholder=0></td>
-                <td class="short"><input type="submit" value="&#9989"></td>
-              </tr>
-            </form>
+            
+            <tr>
+              <td><input id='msg' type="text" name='msg' placeholder='Mit üzensz?'></td>
+              <td><input id='time' type='time' name='end' placeholder=12:34></td>
+              <td><input id='days' type="number" name="days" min="0" max="9999999" placeholder=0></td>
+              <!--<td class="short"><input type="submit" value="&#9989"></td>-->
+              <td class="short"><button onclick="redirector()">&#9989</button></td>
+              <td id='pipa'></td>
+            </tr>
+            
           </table>
     </article>
 </body>

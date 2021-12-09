@@ -27,30 +27,22 @@ article {
     padding: 10px;
 }
 
-button, a , p{
-    margin: 7px;
-    padding: 5px;
-    border: 0px;
-    border-radius: 10px;
-    font-size:16px;
-    width: 90%;
-    color: burlywood;
-    text-align: center;
-}
-
 button, a {
-    background-color: darkslateblue;
-    text-decoration: none;
-    display: inline-block;
+    width: 100%;
+    padding: 10px 5px;
+  /*border: 2px solid black;*/
     box-sizing: border-box;
+    text-align: center;
+    font-size:16px;
+
+    background-color: #4CAF50;
+    font-size: 25px;
     cursor: pointer;
     transition: 0.4s;
 }
-
-a:hover, a:active, button:hover, button:active {
-    background-color: black;
-    color: orange;
-    /*transform: translateY(2px);*/
+button:hover, a:hover {
+    background-color: #00bb00;
+    border-radius: 10px;
     transition: 0.4s;
 }
 
@@ -90,15 +82,4 @@ input {
     text-align: center;
     font-size:16px;
 }
-input[type=submit] {
-    background-color: #4CAF50;
-    font-size: 25px;
-    color: Khaki;
-    cursor: pointer;
-    transition: 0.4s;
-}
-input[type=submit]:hover {
-    background-color: #00bb00;
-    border-radius: 20px;
-    transition: 0.4s;
-}
+

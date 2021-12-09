@@ -5,6 +5,6 @@ function redirector() {
     var time = document.getElementById("time").value;
     var days = document.getElementById("days").value;
     url_to_redirect += "&field7=" + msg + "&field5=" + time + "&field6=" + days;
-    alert("Ezt küldted:" + url_to_redirect);
-    location.assign("https://www.w3schools.com");
+    document.getElementById("pipa").innerHTML = "<a href=\"" + url_to_redirect + "\">&#9989</a>";
+    //alert("Ezt küldted:" + url_to_redirect);
 }
