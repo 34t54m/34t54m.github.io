@@ -1,21 +1,37 @@
-<html>
-	<head>
-  		<title>Órai feladat oldal</title>
-		<link rel="stylesheet" href="styles.css" />
-	</head>
-	<body>
-		<h1>Főcím szövege</h1>
-		<p>Szöveg, szöveg, még több szöveg...</p>
-		
-		<img src="https://httpstatusdogs.com/img/203.jpg" style="width:600px;height:400px;/>
+<!DOCTYPE html>
+<html lang="hu-hu">
+<head>
+  <title>IOT Control</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" ></script>
+</head>
 
-		<ul>
-			<li>Első</li>
-			<li>Második</li>
-		</ul>
+<body>
+    <header>
+        <h2>34T54m IOT Control</h2>
+    </header>
 
-		<hr />
-		
-		<p>Ez a kedvenc weboldalam: <a href="https://httpstatusdogs.com/">qták</a></p> 
-	</body>
+
+    <article>
+        <table id="input_Table">
+            <tr>
+                <th class="short">Üzenet</th>
+                <th>Időpont</th>
+                <th>Napok</th>
+                <th class="short">&#10004</th>
+            </tr>
+            
+            <form onsubmit="redirector()" method="post">
+              <tr>
+                <td><input id='msg' type="text" name='msg' placeholder='Mit üzensz?'></td>
+                <td><input id='time' type='time' name='end' placeholder=12:34></td>
+                <td><input id='days' type="number" name="days" min="0" max="9999999" placeholder=0></td>
+                <td class="short"><input type="submit" value="&#9989"></td>
+              </tr>
+            </form>
+          </table>
+    </article>
+</body>
 </html>
