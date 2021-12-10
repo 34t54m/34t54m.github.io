@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hu-hu">
 <head>
-  <title>IOT Control</title>
+  <title>34T54m IOT Control</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
@@ -9,18 +9,19 @@
 </head>
 
 <body>
-    <header>
-        <h2>34T54m IOT Control</h2>
-    </header>
 
 
     <article>
+    <header>
+        <h2>Matrix IOT Control</h2>
+    </header>
+
         <table id="input_Table">
             <tr>
                 <th class="short">Üzenet</th>
                 <th>Időpont</th>
                 <th>Napok</th>
-                <th class="short">Összerak</th>
+                <!--<th class="short">Összerak</th>-->
                 <th class="short">Elküld</th>
             </tr>
             
@@ -28,13 +29,17 @@
             <tr>
               <td><input id='msg' type="text" name='msg' placeholder='Mit üzensz?'></td>
               <td><input id='time' type='time' name='end' placeholder=12:34></td>
-              <td><input id='days' type="number" name="days" min="0" max="9999999" placeholder=0></td>
-              <!--<td class="short"><input type="submit" value="&#9989"></td>-->
-              <td class="short"><button onclick="redirector()">&#9989</button></td>
+              <td><input onchange="redirector()" id='days' type="number" name="days" min="0" max="9999999" placeholder=0></td>
+              <!--<td class="short"><input type="submit" value="&#9989"></td>
+              <td class="short"><button onclick>&#9989</button></td>-->
               <td id='pipa'></td>
             </tr>
             
           </table>
+
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=451&title=Outdoor+Temp+NTC&type=line"></iframe>
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=2016&title=Indoor+Temp+DHT22&type=line"></iframe>
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=2016&title=Indoor+Humidity+DHT22&type=line"></iframe>
     </article>
 </body>
 </html>

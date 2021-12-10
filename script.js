@@ -6,5 +6,6 @@ function redirector() {
     var days = document.getElementById("days").value;
     url_to_redirect += "&field7=" + msg + "&field5=" + time + "&field6=" + days;
     document.getElementById("pipa").innerHTML = "<a href=\"" + url_to_redirect + "\">&#9989</a>";
+    //document.getElementById("pipa").style.background = "#4CAF50";
     //alert("Ezt küldted:" + url_to_redirect);
 }

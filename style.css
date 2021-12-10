@@ -17,38 +17,45 @@ header{
     background: lightgrey;
     /*border-style: solid;*/
     padding: 15px;
-    border-style: none none ridge ;
     border-width: 1px;
     border-color: black;
 }
 
 article {
+    background-color: cornsilk;
+    box-shadow: 0px 0px 5px darkorange;
     margin-top: 20px;
-    padding: 10px;
+    width: 80%;
 }
 
-button, a {
+button, a, div {
     width: 100%;
-    padding: 10px 5px;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 5px;
+    padding-bottom: 5px;
   /*border: 2px solid black;*/
     box-sizing: border-box;
     text-align: center;
     font-size:16px;
-
     background-color: #4CAF50;
     font-size: 25px;
     cursor: pointer;
     transition: 0.4s;
 }
+
 button:hover, a:hover {
     background-color: #00bb00;
-    border-radius: 10px;
+    border-radius: 20px;
     transition: 0.4s;
 }
 
 table {
+    background-color: lightgray;
+    margin-top: 15px;
+    margin-bottom: 15px;
     border-collapse: collapse;
-    outline: paleturquoise solid  10px;
+    outline: paleturquoise solid  5px;
     border-radius: 5px;
     width: 80%;
     max-width: 800px;
@@ -57,19 +64,11 @@ table {
 td, th {
     border: 1px solid black;
     text-align: center;
-    color:paleturquoise;
+    color:navy;
     width: 100px;
 }
 .short {
     width: 10px;
-}
-
-tr{
-    background-color: darkslategray;
-}
-
-tr:nth-child(even) {
-    background-color: Grey;
 }
 
 input {
@@ -83,3 +82,26 @@ input {
     font-size:16px;
 }
 
+iframe{
+    margin: 20px;
+    box-shadow: 0px 0px 5px paleturquoise;
+}
+
+@media only screen and (max-width:600px) {
+/* For mobile phones: */
+    nav, article, table, iframe {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-bottom: 5px;
+    }
+    header{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
+    }
+    div{
+        margin-bottom: 5%;
+    }    
+
+}
