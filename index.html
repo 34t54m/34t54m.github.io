@@ -9,37 +9,57 @@
 </head>
 
 <body>
-
-
     <article>
     <header>
-        <h2>Matrix IOT Control</h2>
+        <h1>Matrix IOT Control</h1>
     </header>
 
-        <table id="input_Table">
-            <tr>
-                <th class="short">Üzenet</th>
-                <th>Időpont</th>
-                <th>Napok</th>
-                <!--<th class="short">Összerak</th>-->
-                <th class="short">Elküld</th>
-            </tr>
-            
-            
-            <tr>
-              <td><input id='msg' type="text" name='msg' placeholder='Mit üzensz?'></td>
-              <td><input id='time' type='time' name='end' placeholder=12:34></td>
-              <td><input onchange="redirector()" id='days' type="number" name="days" min="0" max="9999999" placeholder=0></td>
-              <!--<td class="short"><input type="submit" value="&#9989"></td>
-              <td class="short"><button onclick>&#9989</button></td>-->
-              <td id='pipa'></td>
-            </tr>
-            
-          </table>
+      <h2>Üzenet kijelzésének időzítése a Matrix kijezőre</h2>
+      <table id="input_Table">
+          <tr>
+              <th class="short">Üzenet</th>
+              <th>Időpont</th>
+              <th>Napok</th>
+              <!--<th class="short">Összerak</th>-->
+              <th class="short">Elküld</th>
+          </tr>
+          
+          <tr>
+            <td><input id='msg' type="text" name='msg' placeholder='Mit üzensz a Matrixra?'></td>
+            <td><input id='time' type='time' name='end' placeholder=12:34></td>
+            <td><input onchange="redirector()" id='days' type="number" name="days" min="0" max="9999999" placeholder=0></td>
+            <!--<td class="short"><input type="submit" value="&#9989"></td>
+            <td class="short"><button onclick>&#9989</button></td>-->
+            <td id='pipa'></td>
+          </tr>
+      </table>
 
-      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=451&title=Outdoor+Temp+NTC&type=line"></iframe>
-      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=2016&title=Indoor+Temp+DHT22&type=line"></iframe>
-      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=2016&title=Indoor+Humidity+DHT22&type=line"></iframe>
+      <h2>Kijelzők testreszabása</h2>
+      <table style="width:max-content;" id="graph_Table">
+          
+        <tr>
+          <th>Kijelzett Napok</th>
+          <th colspan="2">Felbontás</th></tr>
+          <!--<tr><td><input onchange="scalemodder()" id='scale' type="number" name='scale' min="5" placeholder='1440'></td><td>percenként 1 érték</td></tr>-->
+        <tr>
+          <td><input onchange="dayModder()" id='i_days' type="number" name='i_days' min="1" placeholder='3'></td>
+          <td><select onchange="scaleModder()" id='i_scale' type="number" name='i_scale'>
+            <option value="">Mérések szerinti</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="60">60 (1 óra)</option>
+            <option value="240">240 (4 óra)</option>
+            <option value="720">720 (12 óra)</option>
+            <option value="1440">1440 (24 óra)</option>
+          </select></td>
+          <td>percenként 1 érték</td></tr>
+      </table>
+
+      <iframe id="i_NTC" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&title=Matrix+Outdoor+Temp+NTC&type=spline"></iframe>
+      <iframe id="i_DHTtemp" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&title=Indoor+Temp+DHT22&type=line"></iframe>
+      <iframe id="i_DHThum" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&title=Indoor+Humidity+DHT22&type=line"></iframe>
     </article>
 </body>
 </html>
