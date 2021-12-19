@@ -4,7 +4,7 @@ function redirector() {
     var msg = document.getElementById("msg").value;
     var time = document.getElementById("time").value;
     var days = document.getElementById("days").value;
-    url_to_redirect += "&field5=" + time + "ß" + days + "ß" + msg;
+    url_to_redirect += "&field5=" + time + "," + days + "," + msg;
     document.getElementById("pipa").innerHTML = "<a href=\"" + url_to_redirect + "\">&#9989</a>";
     //document.getElementById("pipa").style.background = "#4CAF50";
     //alert("Ezt küldted:" + url_to_redirect);
