@@ -17,6 +17,7 @@ window.addEventListener('load', onLoad);
 
 function onLoad(event){
     iFrameChanger();
+    tsDataCollector();
 }
 
 function dayModder(){
@@ -34,3 +35,16 @@ function iFrameChanger(){
     document.getElementById("i_DHTtemp").src = "https://thingspeak.com/channels/1498325/charts/3?bgcolor=%23ffffff&color=%23d62020&days=" + i_days + "&dynamic=true&timescale=" + i_scale + "&title=Indoor+Temp+DHT22&type=line";
     document.getElementById("i_DHThum").src = "https://thingspeak.com/channels/1498325/charts/4?bgcolor=%23ffffff&color=%23d62020&days=" + i_days + "&dynamic=true&timescale=" + i_scale + "&title=Indoor+Humidity+DHT22&type=line";
 }
+
+function tsDataCollector(){
+    document.getElementById("value1").innerHTML = userAction();
+}
+
+/*
+const userAction = async () => {
+    const response = await fetch('https://api.thingspeak.com/channels/1498325/feeds.json?results=1');
+    const myJson = await response.json(); //extract JSON from the http response
+    return myJson;
+
+}
+*/
