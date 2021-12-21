@@ -1,9 +1,8 @@
-var url_to_redirect = "https://api.thingspeak.com/update?api_key=H0YG1GCY4ZDC9UUX"
-
 function redirector() {
     var msg = document.getElementById("msg").value;
     var time = document.getElementById("time").value;
     var days = document.getElementById("days").value;
+    var url_to_redirect = "https://api.thingspeak.com/update?api_key=H0YG1GCY4ZDC9UUX"
     url_to_redirect += "&field5=" + time + "_" + days + "_" + msg;
     document.getElementById("pipa").innerHTML = "<a href=\"" + url_to_redirect + "\">&#9989</a>";
     //document.getElementById("pipa").style.background = "#4CAF50";
