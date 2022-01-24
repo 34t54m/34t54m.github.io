@@ -9,57 +9,83 @@
 </head>
 
 <body>
-    <article>
+  <article>
     <header>
-        <h1>Matrix IOT Control</h1>
+      <h1>Matrix IOT Control</h1>
     </header>
 
-      <h2>Üzenet kijelzésének időzítése a Matrix kijezőre</h2>
-      <table id="input_Table">
-          <tr>
-              <th class="short">Üzenet</th>
-              <th>Időpont</th>
-              <th>Napok</th>
-              <!--<th class="short">Összerak</th>-->
-              <th class="short">Elküld</th>
-          </tr>
-          
-          <tr>
-            <td><input id='msg' type="text" name='msg' placeholder='Mit üzensz a Matrixra?'></td>
-            <td><input id='time' type='time' name='end' placeholder=12:34></td>
-            <td><input onchange="redirector()" id='days' type="number" name="days" min="0" max="9999999" placeholder=0></td>
-            <!--<td class="short"><input type="submit" value="&#9989"></td>
-            <td class="short"><button onclick>&#9989</button></td>-->
-            <td id='pipa'></td>
-          </tr>
-      </table>
+    <!--
+    <table id="field_Table">
+      <tr>
+          <th id='field1'>Field 1</th>
+          <th id='field2'>Field 2</th>
+          <th id='field3'>Field 3</th>
+          <th id='field4'>Field 4</th>
+          <th id='field5'>Field 5</th>
+          <th id='field6'>Field 6</th>
+          <th id='field7'>Field 7</th>
+          <th id='field8'>Field 8</th>
+      </tr>
 
-      <h2>Kijelzők testreszabása</h2>
-      <table style="width:max-content;" id="graph_Table">
-          
-        <tr>
-          <th>Kijelzett Napok</th>
-          <th colspan="2">Felbontás</th></tr>
-          <!--<tr><td><input onchange="scalemodder()" id='scale' type="number" name='scale' min="5" placeholder='1440'></td><td>percenként 1 érték</td></tr>-->
-        <tr>
-          <td><input onchange="dayModder()" id='i_days' type="number" name='i_days' min="1" placeholder='3'></td>
-          <td><select onchange="scaleModder()" id='i_scale' type="number" name='i_scale'>
-            <option value="">Mérések szerinti</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <option value="60">60 (1 óra)</option>
-            <option value="240">240 (4 óra)</option>
-            <option value="720">720 (12 óra)</option>
-            <option value="1440">1440 (24 óra)</option>
-          </select></td>
-          <td>percenként 1 érték</td></tr>
-      </table>
+      <tr>
+        <td id='value1'>Value 1</td>
+        <td id='value2'>Value 2</td>
+        <td id='value3'>Value 3</td>
+        <td id='value4'>Value 4</td>
+        <td id='value5'>Value 5</td>
+        <td id='value6'>Value 6</td>
+        <td id='value7'>Value 7</td>
+        <td id='value8'>Value 8</td>
+      </tr>
+    </table>
+    -->
 
-      <iframe id="i_NTC" width="940" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/2?average=20&bgcolor=%23ffffff&color=%23d62020&days=3&dynamic=true&title=Matrix+Outdoor+Temp+NTC&type=spline"></iframe>
-      <iframe id="i_DHTtemp" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&title=Indoor+Temp+DHT22&type=line"></iframe>
-      <iframe id="i_DHThum" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/4?average=20&bgcolor=%23ffffff&color=%23d62020&days=3&dynamic=true&title=Matrix+Humidity+DHT22&type=spline"></iframe>
-    </article>
+    <h2>Üzenet kijelzésének időzítése a Matrix kijezőre</h2>
+    <table id="input_Table">
+        <tr>
+            <th class="short">Üzenet</th>
+            <th>Időpont</th>
+            <th>Napok</th>
+            <!--<th class="short">Összerak</th>-->
+            <th class="short">Elküld</th>
+        </tr>
+        
+        <tr>
+          <td><input id='msg' type="text" name='msg' placeholder='Mit üzensz a Matrixra?'></td>
+          <td><input id='time' type='time' name='end' placeholder=12:34></td>
+          <td><input onchange="redirector()" id='days' type="number" name="days" min="0" max="9999999" placeholder=0></td>
+          <!--<td class="short"><input type="submit" value="&#9989"></td>
+          <td class="short"><button onclick>&#9989</button></td>-->
+          <td id='pipa'></td>
+        </tr>
+    </table>
+
+    <h2>Kijelzők testreszabása</h2>
+    <table style="width:max-content;" id="graph_Table">
+        
+      <tr>
+        <th>Kijelzett Napok</th>
+        <th colspan="2">Felbontás</th></tr>
+        <!--<tr><td><input onchange="scalemodder()" id='scale' type="number" name='scale' min="5" placeholder='1440'></td><td>percenként 1 érték</td></tr>-->
+      <tr>
+        <td><input onchange="dayModder()" id='i_days' type="number" name='i_days' min="1" placeholder='3'></td>
+        <td><select onchange="scaleModder()" id='i_scale' type="number" name='i_scale'>
+          <option value="">Mérések szerinti</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="60">60 (1 óra)</option>
+          <option value="240">240 (4 óra)</option>
+          <option value="720">720 (12 óra)</option>
+          <option value="1440">1440 (24 óra)</option>
+        </select></td>
+        <td>percenként 1 érték</td></tr>
+    </table>
+
+    <iframe id="i_NTC" width="940" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/2?average=20&bgcolor=%23ffffff&color=%23d62020&days=3&dynamic=true&title=Matrix+Outdoor+Temp+NTC&type=spline"></iframe>
+    <iframe id="i_DHTtemp" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&title=Indoor+Temp+DHT22&type=line"></iframe>
+    <iframe id="i_DHThum" width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1498325/charts/4?average=20&bgcolor=%23ffffff&color=%23d62020&days=3&dynamic=true&title=Matrix+Humidity+DHT22&type=spline"></iframe>
+</article>
 </body>
 </html>
